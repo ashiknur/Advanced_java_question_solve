@@ -4,7 +4,11 @@
   - Java is not considered a pure Object-Oriented Programming (OOP) language. While it embodies many OOP concepts such as inheritance, encapsulation, polymorphism, and abstraction, Java does not strictly adhere to all OOP principles. For instance, it supports primitive data types (like int, char, etc.) that are not objects, which is a deviation from the pure OOP paradigm where everything is supposed to be an object.
 
 #### b) What is ‘DAO’, Why do we need DAO in web applications?
-  - DAO stands for Data Access Object. It is a design pattern that provides an abstract interface to some type of database or other persistence mechanism. DAOs are used in web applications to separate low-level data accessing API or operations from high-level business services. This separation allows for cleaner code and easier maintenance, as data access logic is centralized in DAOs.
+  - **DAO (Data Access Object):** DAO is a design pattern used in software engineering to provide an abstract interface to some type of database or other persistence mechanism. It separates the application's business logic from the data access code, making the code more modular and maintainable. 
+  - **Why we need DAO in web applications:** 
+    - **Abstraction:** DAO provides an abstraction layer, allowing the application to interact with the data access layer without being concerned with the specific details of the underlying database. 
+    - **Maintainability:** By separating data access logic from business logic, changes to the database schema or technology can be isolated within the DAO implementation. 
+    - **Testability:** DAOs can be easily mocked or replaced with test implementations during unit testing, facilitating testing of the business logic independently of the database. 
 
 #### c) How Do You Trigger Garbage Collection From Java Code?
   - In Java, garbage collection cannot be triggered directly. The System.gc() method suggests that the JVM performs garbage collection, but it is not guaranteed. Garbage collection is managed by the JVM itself, which decides when to perform it based on its own algorithms and heuristics.
@@ -19,14 +23,32 @@
     - **SQLException:** Handles any SQL errors that occur in the database communication process.
 
 
-#### e) In a web application "StringBuilder" or “StringBuffer” which item should we use, why?
-  - In most web applications, StringBuilder is preferred over StringBuffer because it is faster. StringBuffer is synchronized, making it thread-safe but slower. StringBuilder is not synchronized, which makes it more efficient in scenarios where thread safety is not a concern.
-
+#### e) In a web application "**StringBuilder**" or “**StringBuffer**” which item should we use, why?
+- In a web application, it's generally recommended to use **StringBuilder** over **StringBuffer** for performance reasons unless synchronization is explicitly needed. 
+- **StringBuilder** is not synchronized, making it more efficient in a single-threaded environment. In a web application, where multiple threads may be handling different requests concurrently, synchronization might not be necessary in most cases. 
+- **StringBuffer** is synchronized, which means it is thread-safe. If you are working in a multithreaded environment and need thread safety, you might choose **StringBuffer**. 
+- However, if thread safety is not a concern, **StringBuilder** is preferred due to its 
+better performance. 
 
 ### <div align = center><br/><br/><br/>Answer to Question No 2</div>
 
 #### a) What is the difference between Get and Post method?
-  - GET and POST are HTTP methods used to request data from a resource (GET) or submit data to a resource (POST). GET appends data in the query string of the URL and is limited in length. It's less secure and used for retrieving information. POST submits data to be processed through the request body, can handle large amounts of data, and is more secure, making it suitable for sensitive information.
+Both GET and POST are HTTP methods used to submit data to a web server, but they 
+differ in how they do it: 
+- **GET Method:** 
+  - Parameters are included in the URL. 
+  - Limited data can be sent, as the data is part of the URL. 
+  - Data is visible to the user (in the URL). 
+  - It is less secure for sensitive information. 
+  - Cached by the browser. 
+  - Generally used for requests that do not change server state. 
+- **POST Method:** 
+  - Parameters are included in the request body. 
+  - Can send a larger amount of data. 
+  - Data is not visible in the URL. 
+  - More secure for sensitive information. 
+  - Not cached by the browser. 
+  - Generally used for requests that may change server state. 
 
 #### b) Write a Java code to connect with MySQL database.
 
@@ -54,7 +76,13 @@
   
 
 #### c) Why should we use JDBC?
-  - JDBC (Java Database Connectivity) is used for connecting Java applications to a wide range of databases. It provides a standard API for database-independent connectivity between the Java programming language and a wide range of databases. This enables developers to write database applications using a pure Java API.
+Java Database Connectivity (JDBC) is a standard Java API that provides a way to interact with relational databases. Here are some reasons to use JDBC: 
+- **Database Connectivity:** JDBC provides a standard interface for connecting Java 
+applications with relational databases. 
+- **Database Independence:** It allows the development of database-independent applications. You can switch databases by changing the JDBC driver without changing the application code. 
+- **Transaction Management:** JDBC supports transaction management, allowing you to group multiple SQL statements into a single transaction. 
+- **Dynamic SQL Generation:** JDBC allows the generation of SQL statements dynamically, which is useful for building flexible database applications. 
+- **Portability:** JDBC is a part of the Java Standard Edition (SE) platform, making it a portable solution for database access in Java applications. 
 
 
 #### d) Write a Java program to illustrate "Constructor Overloading”.
