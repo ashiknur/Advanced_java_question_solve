@@ -36,7 +36,7 @@ Revolutionize market transparency in Bangladesh by providing real-time price upd
 
 #### Business Model
 
-- **Freemium Plan**: Free basic features for all users.
+- **Free Plan**: Free basic features for all users.
 - **Premium Plan**: Advanced analytics and reports under subscrption.
 - **Enterprise Plan**: API access and custom solutions for businesses.
 
